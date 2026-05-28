@@ -1,7 +1,5 @@
 #include "clab.h"
-#include <iostream>
 
-using namespace std;
 
 Led::Led(int pin) {
     this->pin = pin;
@@ -38,7 +36,6 @@ Ultrasonic::Ultrasonic(){
 }
 
 void Ultrasonic::begin() {
-    cout << "OK" << endl;
 }
 
-CLAB 
+

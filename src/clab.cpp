@@ -1,5 +1,5 @@
 #include "clab.h"
-
+#include <Arduino.h>
 
 Buzzer::Buzzer(int pin){
   this->pin = pin;

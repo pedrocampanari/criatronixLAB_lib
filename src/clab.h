@@ -2,7 +2,7 @@
 #define CLAB_H
 
 #include <Servo.h>
-#include <dht.h>
+// #include <dht.h>
 
 #define BUZZER 2
 #define SERVO 3
@@ -139,7 +139,6 @@ class CLAB {
         LDR ldr;
 
         Servo servo;
-        dht dht_sensor;
 
         CLAB() : 
           btn1(BTN1), 

@@ -16,7 +16,7 @@
 #define DHT 11
 #define IR 12
 #define POTENTIOMETER A0
-#define LDR A1
+#define LDR_PIN A1
 #define HL A2
 #define RED_LED A3
 #define GREEN_LED A4
@@ -57,6 +57,53 @@ class RGB_Led {
 
 };
 
+class Buzzer{
+  private: 
+    int pin;
+
+  public:
+    Buzzer(int pin);
+    Buzzer();
+
+    void begin();
+    void on();
+    void off();
+    void beep(int time);
+};
+
+
+class LDR{
+  private: 
+    int pin;
+
+  public: 
+    LDR(int pin);
+    LDR();
+    void begin();
+    int read();
+};
+
+
+class Potentiometer {
+  private: 
+    int pin;
+
+  public:
+    Potentiometer(int pin);
+    Potentiometer();
+    void begin();
+    int read();
+  
+};
+
+
+
+
+
+
+
+
+
 class Ultrasonic{
     private: 
         int trigger;
@@ -79,26 +126,33 @@ class Button{
         bool read();
 };
 
-class CLAB {
-    private: 
+class CLAB {        
+    public: 
         Button btn1;
         Button btn2;
+        Buzzer buzzer;
         RGB_Led rgb;
         Led r_led;
         Led g_led;
         Led y_led;
+        Potentiometer pot;
+        LDR ldr;
 
         Servo servo;
         dht dht_sensor;
 
-    public: 
-    //Erro nas pinagens
         CLAB() : 
           btn1(BTN1), 
-          btn2(BTN2), 
+          btn2(BTN2),
+          buzzer(BUZZER),
           rgb(R_RGB_LED, G_RGB_LED, B_RGB_LED), 
-          r_led(RED_LED), g_led(GREEN_LED), 
-          y_led(YELLOW_LED){}
+          r_led(RED_LED), 
+          g_led(GREEN_LED), 
+          y_led(YELLOW_LED),
+          pot(POTENTIOMETER), 
+          ldr(LDR_PIN){}
+
+        void begin();
 
 };
 

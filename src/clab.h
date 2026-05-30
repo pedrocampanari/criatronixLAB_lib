@@ -1,6 +1,6 @@
 #ifndef CLAB_H
 #define CLAB_H
-
+#include <Arduino.h>
 #include <Servo.h>
 // #include <dht.h>
 
